@@ -1,118 +1,238 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+import {BsFillMoonStarsFill} from 'react-icons/bs';
+import {AiFillTwitterCircle, AiFillLinkedin, AiFillYoutube} from "react-icons/ai";
+import localFont from 'next/font/local';
+import {Montserrat} from 'next/font/google';
+import Image from 'next/image';
+import devig from '../public/devigor.png';
+import design from '../public/design.png';
+import consulting from '../public/consulting.png';
+import code from '../public/code.png';
+import dtmoney from '../public/dtMoney.png';
+import todo from '../public/toDoList.png';
+import timer from '../public/timer.png';
+import design_system from '../public/design_system.png';
+import shop_model from '../public/shop_model.png';
+import example_feed from '../public/example_feed.png';
+import {useState} from 'react';
 
-const inter = Inter({ subsets: ['latin'] })
+const montserrat = Montserrat({subsets: ['latin'], weight: ['400', '700', '800']});
+const burton = localFont({src: '../public/Burtons.otf', variable: '--font-burton'});
 
 export default function Home() {
-  return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">pages/index.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+  const [darkMode, setDarkMode] = useState(false);
+  return (<div className={darkMode ? "dark" : ""}>
+    <main className={"bg-white px-10 md:px-20 lg:px-20 dark:bg-gray-900"}>
+      {/* Header */}
+      <section className={"min-h-screen"}>
+        <header>
+          <nav className={"py-10 mb-12 flex justify-between"}>
+            <h1 className={`${burton.className} text-xl dark:text-white`}>Igor Paprocki</h1>
+            <ul className={"flex items-center"}>
+              <li>
+                <BsFillMoonStarsFill onClick={() => setDarkMode(!darkMode)}
+                                     className={"cursor-pointer text-2xl dark:text-white"}/>
+              </li>
+              <li>
+                <a className={"bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 rounded-md ml-8"}
+                   href="#">Portfólio</a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+
+        <div className={"text-center p-10"}>
+          <h2 className={`${montserrat.className} text-5xl py-2 -text--blue-100 font-medium md:text-6xl`}>Igor
+            Paprocki</h2>
+          <h3 className={`${montserrat.className}text-2xl py-2 md:text-3xl dark:text-white`}>Software Developer</h3>
+          <p className={`${montserrat.className} text-base py-5 leading-8 text-gray-800 md:text-xl max-w-full mx-auto dark:text-white`}>Profissional
+            prestando serviços de programação e criando pacotes de design. Junte-se a mim abaixo e vamos entrar em
+            contato!</p>
         </div>
-      </div>
+        <div className={"text-5xl flex justify-center gap-16 py-3 text-gray-600"}>
+          <a className={`dark:text-white`} href="https://twitter.com/IgorPaprockiDv"
+             target="_blank"><AiFillTwitterCircle/></a>
+          <a className={`dark:text-white`} href="https://www.linkedin.com/in/igorcastilhos/"
+             target="_blank"><AiFillLinkedin/></a>
+          <a className={`dark:text-white`} href="https://www.youtube.com/channel/UCmu8Ay9Gyuf4DQb9xaWLogw"
+             target="_blank"><AiFillYoutube/></a>
+        </div>
+        <div>
+          <Image className={"relative mx-auto rounded-full w-80 h-80 mt-20 md:h-96 md:w-96"} src={devig}
+                 alt="Igor Image"/>
+        </div>
+      </section>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
+      {/* Services */}
+      <section>
+        <div>
+          <h3 className={`${montserrat.className} text-3xl py-10 dark:text-white`}>Serviços</h3>
+          <p className={`${montserrat.className}text-base py-2 leading-8 text-gray-800 dark:text-white`}>
+            Desde o início da minha jornada como desenvolvedor, fiz muitos projetos que apresentam as mais recentes
+            tecnologias. Trabalhando com <span className={"text-cyan-400"}>Desenvolvimento Web</span>, a gama de
+            serviços que ofereço incluem <span className={"text-cyan-400"}>Landing Pages</span> até mesmo <span
+              className={"text-teal-400"}> Saas.</span>
           </p>
-        </a>
+        </div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+        <div className={"lg:flex gap-10"}>
+          <div className={`${montserrat.className} text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1`}>
+            <Image className={"mx-auto w-24 h-24"} src={design} alt="Design image"/>
+            <h3 className={`text-lg font-medium pt-8 pb-2`}>
+              Designs Modernos
+            </h3>
+            <p className={`py-2`}>
+              Criando designs elegantes adequados às suas necessidades, seguindo as principais práticas
+            </p>
+            <h4 className={`py-4 text-teal-600`}>Design Tools</h4>
+            <p className={`text-gray-800 py-1`}>Figma</p>
+          </div>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
+          <div className={`${montserrat.className} text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1`}>
+            <Image className={"mx-auto w-24 h-24"} src={code} alt="Code image"/>
+            <h3 className={"text-lg font-medium pt-8 pb-2"}>
+              Tecnologias de mercado
+            </h3>
+            <p className={"py-2"}>
+              Minha abordagem se baseia em identificar e implementar soluções tecnológicas estratégicas, capazes de
+              impulsionar a eficiência operacional, melhorar a experiência do cliente e garantir a vantagem competitiva.
+            </p>
+            <h4 className={"py-4 text-teal-600"}>Linguagens | Bibliotecas | Frameworks</h4>
+            <p className={"text-gray-800 py-1"}>JavaScript</p>
+            <p className={"text-gray-800 py-1"}>React + NextJs</p>
+            <p className={"text-gray-800 py-1"}>Tailwind CSS</p>
+            <p className={"text-gray-800 py-1"}>Python</p>
+          </div>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
+          <div className={`${montserrat.className} text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1`}>
+            <Image className={"mx-auto w-24 h-24"} src={consulting} alt="Design image"/>
+            <h3 className={"text-lg font-medium pt-8 pb-2"}>
+              Satisfação do consumidor
+            </h3>
+            <p className="py-2">
+              Acredito que quando os clientes se sentem valorizados, eles se tornam defensores do produto e impulsionam
+              o sucesso do negócio. Estou entusiasmado para colaborar em projetos que busquem elevar a satisfação do
+              consumidor a um nível excepcional.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Portfolio */}
+      <section>
+        <div>
+          <h3 className={`${montserrat.className} text-3xl py-1 dark:text-white`}>Portfólio</h3>
+          <p className={`${montserrat.className} text-base py-2 leading-8 text-gray-800 dark:text-white`}>
+            Esses são alguns dos meus projetos. Você pode encontrar cada um deles no meu GitHub.
           </p>
-        </a>
-      </div>
+        </div>
+
+        <div className={"flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap mx-auto w-full h-full"}>
+
+          <div className={"group w-96 h-96 flex-shrink mx-auto"}>
+            <div className="relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+              <div className="absolute inset-0">
+                <Image className="h-full w-full rounded-xl object-cover shadow-xl shadow-black/40" src={dtmoney} alt="Imagem de Ícones brilhantes"/>
+              </div>
+              <div className="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                <div className="flex min-h-full flex-col items-center justify-center">
+                  <h1 className="text-3xl font-bold mb-4">Dashboard Financeiro</h1>
+                  <p className="text-lg mb-2">Finance & Data</p>
+                  <p className="text-base mb-4">Esse é um projeto que simula um sistema de compra e venda de ações/produtos.</p>
+                  <a href="https://github.com/IgorCastilhos/DT-Money-React-TypeScript" target="_blank"><button className="mt-2 rounded-md bg-neutral-800 px-3 py-2 text-sm hover:-bg--blue-100">GitHub
+                  </button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className={"group w-96 h-96 flex-shrink mx-auto"}>
+            <div className="relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+              <div className="absolute inset-0">
+                <Image className="h-full w-full rounded-xl object-cover shadow-xl shadow-black/40" src={todo} alt="Imagem de Ícones brilhantes"/>
+              </div>
+              <div className="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                <div className="flex min-h-full flex-col items-center justify-center">
+                  <h1 className="text-3xl font-bold mb-4">Lista de Tarefas</h1>
+                  <p className="text-lg mb-2">Storage</p>
+                  <p className="text-base mb-4">Permite criar uma nova tarefa, exluir e marcar como completa.</p>
+                  <a href="https://github.com/IgorCastilhos/ToDo-List-React-TypeScript" target="_blank"><button className="mt-2 rounded-md bg-neutral-800 px-3 py-2 text-sm hover:-bg--blue-100">GitHub
+                  </button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className={"group w-96 h-96 flex-shrink mx-auto"}>
+            <div className="relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+              <div className="absolute inset-0">
+                <Image className="h-full w-full rounded-xl object-cover shadow-xl shadow-black/40" src={timer} alt="Imagem de Ícones brilhantes"/>
+              </div>
+              <div className="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                <div className="flex min-h-full flex-col items-center justify-center">
+                  <h1 className="text-3xl font-bold mb-4">Pomodoro Timer</h1>
+                  <p className="text-lg mb-2">Timing</p>
+                  <p className="text-base mb-4">Esse projeto serve para praticar sessões de estudo e concentração.</p>
+                  <a href="https://github.com/IgorCastilhos/Timer-React-TypeScript" target="_blank"><button className="mt-2 rounded-md bg-neutral-800 px-3 py-2 text-sm hover:-bg--blue-100">GitHub
+                  </button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className={"group w-96 h-96 flex-shrink mx-auto"}>
+            <div className="relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+              <div className="absolute inset-0">
+                <Image className="h-full w-full rounded-xl object-cover shadow-xl shadow-black/40" src={design_system} alt="Imagem de Sistema de Design"/>
+              </div>
+              <div className="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                <div className="flex min-h-full flex-col items-center justify-center">
+                  <h1 className="text-3xl font-bold mb-4">Design System</h1>
+                  <p className="text-lg mb-2">Design Pattern</p>
+                  <p className="text-base mb-4">Meu maior projeto. Consiste em um sistema com Storybook e um monorepo com os meus Design Tokens preferidos.</p>
+                  <a href="https://github.com/IgorCastilhos/Design-System" target="_blank"><button className="mt-2 rounded-md bg-neutral-800 px-3 py-2 text-sm hover:-bg--blue-100">GitHub
+                  </button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className={"group w-96 h-96 flex-shrink mx-auto"}>
+            <div className="relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+              <div className="absolute inset-0">
+                <Image className="h-full w-full rounded-xl object-cover shadow-xl shadow-black/40" src={shop_model} alt="Imagem de um modelo de site de compras"/>
+              </div>
+              <div className="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                <div className="flex min-h-full flex-col items-center justify-center">
+                  <h1 className="text-3xl font-bold mb-4">Shop Model</h1>
+                  <p className="text-lg mb-2">Store</p>
+                  <p className="text-base mb-4">Esse é um projeto que simula um sistema de compra de camisetas. Realizei a conexão com a plataforma de pagamentos Stripe nesse projeto.</p>
+                  <a href="https://github.com/IgorCastilhos/Shop-model" target="_blank"><button className="mt-2 rounded-md bg-neutral-800 px-3 py-2 text-sm hover:-bg--blue-100">GitHub
+                  </button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className={"group w-96 h-96 flex-shrink mx-auto"}>
+            <div className="relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+              <div className="absolute inset-0">
+                <Image className="h-full w-full rounded-xl object-cover shadow-xl shadow-black/40" src={example_feed} alt="Imagem de um site inspirado em uma rede social"/>
+              </div>
+              <div className="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                <div className="flex min-h-full flex-col items-center justify-center">
+                  <h1 className="text-3xl font-bold mb-4">Rede Social</h1>
+                  <p className="text-lg mb-2">Social Network</p>
+                  <p className="text-base mb-4">Site que simula uma rede social, com foto de perfil e comentários.</p>
+                  <a href="https://github.com/IgorCastilhos/Example-Feed" target="_blank"><button className="mt-2 rounded-md bg-neutral-800 px-3 py-2 text-sm hover:-bg--blue-100">GitHub
+                  </button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
     </main>
-  )
+  </div>);
 }
