@@ -1,6 +1,6 @@
-import code from '../public/code.png/';
-import design from '../public/design.png/';
-import consulting from '../public/consulting.png/';
+import code from "pages/imgs/code.png";
+import design from "pages/imgs/design.png";
+import consulting from "pages/imgs/consulting.png";
 import {BsFillMoonStarsFill} from 'react-icons/bs';
 import {AiFillTwitterCircle, AiFillLinkedin, AiFillYoutube} from "react-icons/ai";
 import {Montserrat} from 'next/font/google';
