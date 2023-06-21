@@ -1,11 +1,11 @@
+import code from 'public/code.png';
+import design from 'public/design.png';
+import consulting from 'public/consulting.png';
 import {BsFillMoonStarsFill} from 'react-icons/bs';
 import {AiFillTwitterCircle, AiFillLinkedin, AiFillYoutube} from "react-icons/ai";
 import {Montserrat} from 'next/font/google';
 import Image from 'next/image';
 import devig from 'public/devigor.png';
-import design from 'public/design.png';
-import consulting from 'public/consulting.png';
-import code from 'public/code.png';
 import dtmoney from 'public/dtMoney.png';
 import todo from 'public/toDoList.png';
 import timer from 'public/timer.png';
@@ -32,7 +32,7 @@ export default function Home() {
               </li>
               <li>
                 <a className={"bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 rounded-md ml-8"}
-                   href="#">Portfólio</a>
+                   href={"#Portfolio"}>Portfólio</a>
               </li>
             </ul>
           </nav>
@@ -116,7 +116,7 @@ export default function Home() {
       </section>
 
       {/* Portfolio */}
-      <section>
+      <section id="Portfolio">
         <div>
           <h3 className={`${montserrat.className} text-3xl py-1 dark:text-white`}>Portfólio</h3>
           <p className={`${montserrat.className} text-base py-2 leading-8 text-gray-800 dark:text-white`}>
