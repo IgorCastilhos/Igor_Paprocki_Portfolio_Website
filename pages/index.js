@@ -1,6 +1,5 @@
 import {BsFillMoonStarsFill} from 'react-icons/bs';
 import {AiFillTwitterCircle, AiFillLinkedin, AiFillYoutube} from "react-icons/ai";
-import localFont from 'next/font/local';
 import {Montserrat} from 'next/font/google';
 import Image from 'next/image';
 import devig from '../public/devigor.png';
@@ -16,7 +15,6 @@ import example_feed from '../public/example_feed.png';
 import {useState} from 'react';
 
 const montserrat = Montserrat({subsets: ['latin'], weight: ['400', '700', '800']});
-const burton = localFont({src: '../public/Burtons.otf', variable: '--font-burton'});
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
@@ -26,7 +24,7 @@ export default function Home() {
       <section className={"min-h-screen"}>
         <header>
           <nav className={"py-10 mb-12 flex justify-between"}>
-            <h1 className={`${burton.className} text-xl dark:text-white`}>Igor Paprocki</h1>
+            <h1 className={`${montserrat.className} text-xl dark:text-white`}>Igor Paprocki</h1>
             <ul className={"flex items-center"}>
               <li>
                 <BsFillMoonStarsFill onClick={() => setDarkMode(!darkMode)}
