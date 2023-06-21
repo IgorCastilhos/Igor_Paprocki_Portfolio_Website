@@ -1,10 +1,10 @@
-import code from 'public/code.png';
-import design from 'public/design.png';
-import consulting from 'public/consulting.png';
+import code from '../public/code.png/';
+import design from '../public/design.png/';
+import consulting from '../public/consulting.png/';
 import {BsFillMoonStarsFill} from 'react-icons/bs';
 import {AiFillTwitterCircle, AiFillLinkedin, AiFillYoutube} from "react-icons/ai";
 import {Montserrat} from 'next/font/google';
-import Image from 'next/image';
+import Image from 'next/image'
 import devig from 'public/devigor.png';
 import dtmoney from 'public/dtMoney.png';
 import todo from 'public/toDoList.png';
@@ -86,7 +86,7 @@ export default function Home() {
           </div>
 
           <div className={`${montserrat.className} text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1`}>
-            <Image className={"mx-auto w-24 h-24"} src={code} alt="Code image"/>
+            <Image className={"mx-auto w-24 h-24"} src={code} width={96} height={96} quality={100} alt="Code image"/>
             <h3 className={"text-lg font-medium pt-8 pb-2"}>
               Tecnologias de mercado
             </h3>
@@ -102,7 +102,7 @@ export default function Home() {
           </div>
 
           <div className={`${montserrat.className} text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1`}>
-            <Image className={"mx-auto w-24 h-24"} src={consulting} alt="Design image"/>
+            <Image className={"mx-auto w-24 h-24"} src={consulting} width={96} height={96} quality={100} alt="Design image"/>
             <h3 className={"text-lg font-medium pt-8 pb-2"}>
               Satisfação do consumidor
             </h3>
