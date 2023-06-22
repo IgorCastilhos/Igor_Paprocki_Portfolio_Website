@@ -124,7 +124,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className={"flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap mx-auto w-full h-full"}>
+        <div className={"flex flex-col gap-24 py-10 lg:flex-row lg:flex-wrap mx-auto w-full h-full"}>
 
           <div className={"group w-96 h-96 flex-shrink mx-auto"}>
             <div className="relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
